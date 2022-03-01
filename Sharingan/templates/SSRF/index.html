@@ -1,0 +1,18 @@
+{% extends 'XSS/base.html' %}
+{% load   static %}
+{% block home %}active{% endblock  %}
+<!--container with form-->
+
+{% block content %}
+<div class="content">
+<form action="/ssrf/ssrfone" method="GET" >
+     {% csrf_token %}
+<h2>Fetch HTTP Response Data  </h2>
+<input  id='s' name='s'></input>
+<button type='submit'>Fetch</button><br>
+<div class='content-error'>
+<p id='err'>{{error}}</p>
+</div>
+</form>
+</div>
+{% endblock %}

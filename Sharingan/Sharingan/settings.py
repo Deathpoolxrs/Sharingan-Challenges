@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o+bh66#cviwy0uke7pv&m&7n+d16=wwkj+rg$ol&5l#(e(z&b@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Deathgod.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -120,6 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# Remove 124-126 in deployment Deathpoolxrs
+STATICFILES_DIRS =[
+    os.path.join(BASE_DIR, 'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -128,6 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
+#Uncomment 136-139 after deployment Deathpoolxrs
 MEDIA_ROOT = '/home/Deathgod/Sharingan/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/Deathgod/Sharingan/static'

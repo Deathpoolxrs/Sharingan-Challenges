@@ -6,12 +6,9 @@
 
 {% block content %}
 <div class="content">
-<form action="/xss/xssone" method="GET" >
-     {% csrf_token %}
-<h2>Welcome to DeathGod XSS Challenge {{param | safe}}</h2>
-<input type='hidden' id='p' name='p'></input>
-<button type='submit' style='visibility:hidden;'>submit</button>
+  <h2>Welcome to Ec-Council Challenge </h2>
+  <div class="content-button">
+  <button onclick="window.location.href='/Challenges';" type="button" >Start</button>
   </div>
-</form>
 </div>
 {% endblock %}

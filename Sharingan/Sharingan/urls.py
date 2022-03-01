@@ -21,7 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('xss/',include('XSS.urls'), name='xss'),
+    path('ssrf/',include('SSRF.urls'),name='ssrf'),
     path('about',views.about, name="about"),
     path('error',views.errorpage, name="error"),
-    path('contact',views.contact, name="contact")
+    path('Challenges',views.contact, name="Challenges")
 ]

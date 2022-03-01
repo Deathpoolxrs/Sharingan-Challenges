@@ -7,7 +7,7 @@ def about(request):
     return render(request,'Sharingan/about.html')
 
 def contact(request):
-    return render(request,'Sharingan/contact.html')
+    return render(request,'Sharingan/Challenge.html')
 
 def errorpage(request):
     return render(request,'Sharingan/Error.html')

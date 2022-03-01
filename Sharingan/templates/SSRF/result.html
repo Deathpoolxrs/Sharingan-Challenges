@@ -1,0 +1,11 @@
+{% extends 'XSS/base.html'%}
+{% block backgroudnull %}
+<div class="stacode">
+    <h1>Result Status Code</h1>
+    <h2><br> {{param.status_code}} </h2>
+</div>
+<div class="rescontent">
+    <h1>Result Content body</h1>
+    <h2>{{param.content}} </h2>
+</div>
+{% endblock %}

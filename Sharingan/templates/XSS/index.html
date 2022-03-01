@@ -8,7 +8,7 @@
 <div class="content">
 <form action="/xss/xssone" method="GET" >
      {% csrf_token %}
-<h2>Welcome to DeathGod XSS Challenge {{param | safe}}</h2>
+<h2>Welcome to Ec-Council XSS Challenge Find the hidden parameter {{param | safe}}</h2>
 <input type='hidden' id='p' name='p'></input>
 <button type='submit' style='visibility:hidden;'>submit</button>
   </div>
