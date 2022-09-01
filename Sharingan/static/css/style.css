@@ -5,6 +5,7 @@ html {
   body {
     margin:0;
     font-family:monospace;
+    background-color: #41464b;
   }
   
   .bg {
@@ -40,6 +41,68 @@ html {
     top:50%;
     transform:translate(-50%, -50%);
   }
+  .about{
+   
+    background-color:#41464b;
+    width: 100%;
+    padding: 48px 0px;
+    padding:10vmin;
+    position:fixed;
+    
+
+  }
+  .about img{
+    width: auto;
+    margin-left: 3%;
+    border-radius: 20px;
+  }
+  .about-text{
+    width: 550px;
+    margin-left: 6%;
+  }
+  .main {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-text h1{
+    color: white;
+    font-size: 5rem;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    
+  }
+  .about-text h5{
+    color: white;
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-bottom: 20px; 
+    letter-spacing: 1px;
+  }
+  .about-text p{
+    color: rgb(184, 95, 226);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 28px;
+    margin-bottom: 45px;
+    
+  }
+
+  .about-button button{
+    background: #f9004d;
+    color: white;
+    text-decoration: none;
+    border:2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-size: 20px;
+    align-items: right;
+  }
+ 
   
   h1 {
     font-family:monospace;

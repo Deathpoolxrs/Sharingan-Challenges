@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeathGod XSS</title>
     <!--stylesheet-->
-    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
@@ -21,7 +21,7 @@
 <body>
 <!--Nav Bar-->
 
-
+<div id="{% block css%}{% endblock%}">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-4 pb-4">
   <div class="container-fluid">
     <a class="navbar-brand fs-2 fw-bold" href="/" >
@@ -54,6 +54,6 @@
 {% block content %}
 
 {% endblock  %}
-
+</div>
 </body>
 </html>
