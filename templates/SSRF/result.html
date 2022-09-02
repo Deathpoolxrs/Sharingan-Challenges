@@ -1,0 +1,22 @@
+{% extends 'XSS/base.html'%}
+{% load   static %}
+{% block backgroudnull %}
+
+{% if param %}
+<div class="stacode">
+    <h1>Result Status Code</h1>
+    <h2><br> {{param.status_code}} </h2>
+</div>
+<div class="rescontent">
+    <h1>Result Content body</h1>
+    <h2>{{param.content}} </h2>
+</div>
+{% else %}
+<div class="content">
+    <p>{{meme}}</p>
+    <img src="{% static '/images/ssrf.png' %}">
+
+</div>
+{% endif %}
+
+{%endblock%}

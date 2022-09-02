@@ -1,0 +1,21 @@
+{% extends 'Sharingan/base.html' %}
+{% load  static %}
+{% block About %}active{% endblock %}
+{% block backgroudnull %}
+
+
+<div class="about">
+<div class="main">
+    <img src="{% static '/images/naruto_mobile.jpg' %}" height="500">
+        <div class="about-text">
+            <h1>About Me</h1>
+            <h5>Security Researcher <h5>
+            <p>A passionate, enthusiastic and self-motivated Security Researcher having more then one year of experience as BlackBox web pentester on Hackerone.  </p>
+            <div class="about-button">
+            <button onclick="window.location.href='https://github.com/Deathpoolxrs';">Github</button>
+            <button onclick="window.location.href='https://www.linkedin.com/in/deathpoolxrs/';">Linkedin</button>
+            </div>
+        </div>
+</div>
+</div>
+{% endblock %}

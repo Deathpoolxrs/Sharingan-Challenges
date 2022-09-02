@@ -1,0 +1,28 @@
+{% extends 'XSS/base.html' %}
+{% load   static %}
+{% block home %}active{% endblock  %}
+<!--container with form-->
+
+
+{% block content %}
+<script>
+(function(proxied) {
+  window.alert = function() {
+    document.getElementById("flags").textContent = "{{flags}}";
+    return proxied.apply(this, arguments);
+  };
+})(window.alert);
+
+</script>
+<div class="content">
+<form action="/xss/xssone" method="GET" >
+     {% csrf_token %}
+<h2> {{param | safe}}</h2>
+<h2 id="flags"></h2>
+<img src="{% static '/images/xssmeme.png' %}" >
+<input type='hidden' id='callbackmsg' name='callbackmsg'></input>
+<button type='submit' style='visibility:hidden;'>submit</button>
+  </div>
+</form>
+</div>
+{% endblock %}

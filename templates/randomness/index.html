@@ -1,0 +1,88 @@
+{% extends 'XSS/base.html' %}
+{% load  static %}
+{% block backgroudnull %}
+
+
+<div class="about">
+<div class="main">
+      <div class="wrapper">
+    <h1>Guess The Next Number</h1>
+        <div class="dice-area">
+            <p></p>
+            <p ></p>
+            <p></p>
+            <img id="diceimg" src="{% static 'images/num.png' %}" class="numimg" /><br>
+            <input type="text" class= "diceinput"id="txtInput" placeholder="Enter a number">
+            <div class="dice-button">
+                <button role="button" onclick="result();">Roll and Check</button>
+            </div>
+        </div>
+        
+        
+    </div>
+<script type="text/javascript" src="script.js" charset="UTF-8"></script>
+<script>
+function ano(){
+    //debugger;
+}
+const interval = setInterval(function() {
+   ano()
+ }, 1000);
+
+let dice;
+let count=5;
+let negcount=6;
+function randnum(){
+    let randomnum= getrandnum()
+    dice= randomnum
+}
+document.getElementById('diceimg').setAttribute("src","https://deathpoolxrs.github.io/Dice-Game/assets/num.png")
+
+function getrandnum(){
+    return Math.floor(Math.random()*6) + 1
+}
+function result() {
+    var numberValue = document.getElementById("txtInput").value;
+    randnum()
+    if(isNaN(numberValue) || numberValue.replaceAll(' ', '').length == 0 || numberValue<=0|| numberValue>=7){
+        alert("Please Enter Number")
+    }
+    else if (!(dice==numberValue)){
+        console.log("oops wrong" + numberValue + "right was" + dice);
+        const diceimg = "https://deathpoolxrs.github.io/Dice-Game/assets/dice"+dice+".png";
+        negcount=negcount-1
+        document.querySelectorAll('p')[0].innerHTML = 'Incorrect Guess'
+        document.getElementById('diceimg').setAttribute('src',diceimg)
+        document.querySelectorAll('p')[1].innerHTML = 'Number was '+ dice
+        document.querySelectorAll('p')[2].innerHTML = 'Attempts Left '+ negcount
+        if (negcount==0){
+            alert("Oppps You were not able to solve the challenge")
+            negcount =6;
+            count=5;
+        }
+    }
+    else{
+        randnum();
+        const diceimg = "https://deathpoolxrs.github.io/Dice-Game/assets/dice"+numberValue+".png";
+        document.getElementById('diceimg').setAttribute('src',diceimg)
+        document.querySelectorAll('p')[0].innerHTML = 'Wooohoo Correct Guess'
+        document.querySelectorAll('p')[1].innerHTML = 'Number was '+ dice
+        document.querySelectorAll('p')[2].innerHTML = 'Attempts Left '+ negcount
+        console.log("Woohoo"+dice+"ss"+numberValue);
+        count=count-1;
+        if (count>=4){
+            alert("It was just Luck")
+        }
+        else if (count>1){
+            alert("Woow your to close to bet this Challenge")
+        }
+        else{
+            alert("Congratulation, you done it")
+        }
+    }
+      
+ }
+</script>
+</div>
+</div>
+{% endblock %}
