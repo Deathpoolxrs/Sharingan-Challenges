@@ -26,7 +26,8 @@ SECRET_KEY = 'flag{habibi_you_found_my_camel}'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = TRUE
 
-ALLOWED_HOSTS = ['*']
+# change this Allowed Hosts as per needs
+#ALLOWED_HOSTS = ['*']
 
 
 # Application definition
